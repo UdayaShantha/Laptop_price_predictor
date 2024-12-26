@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4fGjbKJ3ZNfNx2mTz1cU4rJ7HDbH8Zb54VR0wtey0Kn4hx8Yh9tWmb/75PbBaaNVzuDoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInContainer 1.5s ease-in-out;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/600x600/?laptop,technology') no-repeat center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0077ff;
+            font-size: 2rem;
+            animation: fadeInTitle 1s ease-in-out;
+        }
+
+        @keyframes fadeInTitle {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            animation: slideInForm 1s ease-in-out;
+        }
+
+        @keyframes slideInForm {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:hover,
+        select:hover {
+            transform: scale(1.03);
+            border-color: #0077ff;
+        }
+
+        button {
+            background: linear-gradient(to right, #0077ff, #00c6ff);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #005ecb, #0099e6);
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        footer a {
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .emoji {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            input,
+            select,
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fas fa-laptop"></i> Laptop Price Predictor</h1>
+        <form method="POST">
+            <label for="inches">Screen Size (Inches):</label>
+            <input type="number" id="inches" name="inches" placeholder="Enter screen size in inches">
+
+            <label for="ram">RAM (GB):</label>
+            <input type="number" id="ram" name="ram" required placeholder="Enter RAM in GB">
+
+            <label for="weight">Weight (Kg):</label>
+            <input type="number" id="weight" name="weight" step="0.1" required placeholder="Enter weight in kg">
+
+            <label for="brand">Brand:</label>
+            <select id="brand" name="brand" required>
+                <option value="Acer">Acer</option>
+                <option value="Apple">Apple</option>
+                <option value="Asus">Asus</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="MSI">MSI</option>
+                <option value="Chuwi">Chuwi</option>
+                <option value="Fujitsu">Fujitsu</option>
+                <option value="Google">Google</option>
+                <option value="Huawei">Huawei</option>
+                <option value="LG">LG</option>
+                <option value="Mediacom">Mediacom</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Razer">Razer</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Toshiba">Toshiba</option>
+                <option value="Vero">Vero</option>
+                <option value="Xiaomi">Xiaomi</option>
+            </select>
+
+            <label for="usage">Laptop Type:</label>
+            <select id="usage" name="usage" required>
+                <option value="Notebook">Notebook</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Ultrabook">Ultrabook</option>
+                <option value="Workstation">Workstation</option>
+                <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                <option value="Netbook">Netbook</option>
+            </select>
+
+            <label for="resolution">Screen Resolution:</label>
+            <select id="resolution" name="resolution" required>
+                <option value="1366*768">1366x768</option>
+                <option value="1920*1080">1920x1080</option>
+                <option value="2560*1440">2560x1440</option>
+                <option value="3840*2160">3840x2160</option>
+            </select>
+
+            <label for="os">Operating System:</label>
+            <select id="os" name="os" required>
+                <option value="Windows">Windows</option>
+                <option value="MacOS">MacOS</option>
+                <option value="Linux">Linux</option>
+                <option value="Other/No OS">Other/No OS</option>
+            </select>
+
+            <label for="cpu">CPU:</label>
+            <select id="cpu" name="cpu" required>
+                <option value="CPU_AMD">AMD</option>
+                <option value="CPU_Intel">Intel</option>
+                <option value="CPU_Samsung">Samsung</option>
+            </select>
+
+            <label for="cpu_series">CPU Series:</label>
+            <select id="cpu_series" name="cpu_series" required>
+                <option value="AMD_series_processor">AMD Series Processor</option>
+                <option value="Intel Core i3">Intel Core i3</option>
+                <option value="Intel Core i5">Intel Core i5</option>
+                <option value="Intel Core i7">Intel Core i7</option>
+                <option value="Other_series_processor">Other Series Processor</option>
+            </select>
+
+            <label for="gpu">GPU:</label>
+            <select id="gpu" name="gpu" required>
+                <option value="GPU_AMD">AMD</option>
+                <option value="GPU_ARM">ARM</option>
+                <option value="GPU_Intel">Intel</option>
+                <option value="GPU_Nvidia">Nvidia</option>
+            </select>
+
+
+            <label>Additional Features:</label>
+            <div>
+                <input type="checkbox" id="touchscreen" name="features" value="Touchscreen">
+                <label for="touchscreen">Touchscreen</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ips" name="features" value="IPS">
+                <label for="ips">IPS Display</label>
+            </div>
+
+            <button type="submit">Predict Price <span class="emoji">💻</span></button>
+        </form>
+        <div class="result">
+            {% if pred %}
+            <h3>Predicted Price : LKR {{ pred }}</h3>
+            {% endif %}
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Laptop Price Predictor | Built with Machine Learning Model Integration
+    </footer>
+</body>
+
+</html>
