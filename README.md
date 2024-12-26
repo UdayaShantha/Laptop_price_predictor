@@ -3,7 +3,7 @@
 
 Laptop Price Predictor is a web application that predicts the price of a laptop based on various features provided by the user. This project is built using Flask for the backend and HTML/CSS for the frontend, with a machine learning model trained using scikit-learn.
 
-##Features
+## Features
 
 Predicts laptop prices based on:
 
@@ -31,7 +31,7 @@ Error handling for invalid inputs.
 
 Scalable and modular design for easy updates.
 
-##Prerequisites
+## Prerequisites
 
 Before running the application, ensure you have the following installed:
 
@@ -39,7 +39,7 @@ Python 3.7+
 
 pip (Python package manager)
 
-##Machine Learning Model
+## Machine Learning Model
 
 Library Used: scikit-learn
 
@@ -47,7 +47,7 @@ Algorithm: [Specify the algorithm, e.g., Random Forest Regressor]
 
 Training Data: The model was trained on a dataset containing various laptop features and prices.
 
-##Key Technologies
+## Key Technologies
 
 Backend: Flask (Python)
 
@@ -55,7 +55,7 @@ Frontend: HTML, CSS (with responsive design)
 
 Machine Learning: scikit-learn
 
-##Usage
+## Usage
 
 Open the web application in your browser.
 
